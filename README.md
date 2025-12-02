@@ -12,19 +12,19 @@ Este projeto contém implementações de algoritmos clássicos, estruturas de da
 Abaixo, a lista de algoritmos e técnicas estudadas neste projeto:
 
 ### Ordenação (Sorting)
-- [ ] Bubble Sort
-- [ ] Insertion Sort
-- [ ] Merge Sort
-- [ ] Quick Sort
+-  Bubble Sort
+-  Insertion Sort
+-  Merge Sort
+-  Quick Sort
 
 ### Busca e Estruturas
-- [ ] Busca Linear vs Binária
-- [ ] Árvores Binárias de Busca
+-  Busca Linear vs Binária
+-  Árvores Binárias de Busca
 
 ### Paradigmas de Projeto
-- [ ] Divisão e Conquista
-- [ ] Algoritmos Gulosos (Greedy)
-- [ ] Programação Dinâmica
+-  Divisão e Conquista
+-  Algoritmos Gulosos (Greedy)
+-  Programação Dinâmica
 
 ##  Tecnologias e Pacotes
 
