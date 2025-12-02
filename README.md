@@ -32,3 +32,8 @@ O projeto utiliza **R** para processamento e visualização. Recomenda-se o uso 
 
 * **[microbenchmark](https://cran.r-project.org/web/packages/microbenchmark/index.html)**: Para medição precisa do tempo de execução (nanossegundos).
 * **[ggplot2](https://ggplot2.tidyverse.org/)**: Para plotagem dos gráficos de complexidade.
+
+---
+  ## Autor
+
+ **Gabriel Henrique Silva**
