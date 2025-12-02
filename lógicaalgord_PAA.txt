@@ -1,0 +1,116 @@
+Lógica do Bubble Sort
+
+-> Vai percorrendo todas as posições do vetor comparando o elemento n com o elemento n+1, se o elemento n+1 for maio que o elemento n faremos uma troca e assim sucessivamente até termos feito comparações com todos os elementos do vetor. Se o elemento n for menor que o n+1 então vamos para n+2 e faremos a comparação. 
+
+Lógica do Selection Sort 
+
+-> Pense que o Selection tem a lógica inversa do Bubble, enquanto o Bubble busca valores maiores nas posições n do vetor o Selection busca valores menores. Ou seja, o valor na posição n do vetor é menor que o valor na posição n+1 se for troca, caso contrário passa para a posição n+2 do vetor e faz a comparação, isso se repete para todas as posições do vetor até que ele esteja todo ordenado. 
+
+Lógica do Insertion Sort 
+
+-> O Insetion faz a ordenação por Inserção, ele verifica se o valor na posição n+1 e maior que o n se for ele troca, depois ele vai para a posição n+2 compara com o valor na posição n+1 se n+1 for maior que n+2 ele troca, depois ele compara o n+2 com o valor na posição n e se n for maior ele troca, isso se repete até que todo o vetor esteja ordenado. 
+
+Lógica do Quick Sort 
+
+-> O Quick Sort é um algoritmo de DC (Dividir para conquistar), primeiro escolhemos um valor para ser o pivô ele vai comparar o pivô com todos elementos do vetor e vai rearranjar os elementos no vetor os valores a sua esquerda serão menores e os a sua direita serão maiores. Com isso teremos dois vetores, vamos escolher um pivô para o vetor da esquerda ele vai fazer sua comparação e rearranjar o vetor, a partir daí teremos um vetor de dois elementos nele vai ser feito a comparação e depois vai ordenar todos os valores debaixo para cima como uma arvore o mesmo processo se repete para o vetor da direita, quando o da esquerda e o da direita estiverem ordenados o algoritmo vai juntá-los num só. 
+
+Lógica do Merge Sort 
+
+-> O Merge Sort é um algoritmo de DC (Dividir para conquistar), ele divide o vetor original em duas metades, depois ele vai para uma metade e divide ela novamente até que só restem vetores de uma posição e em seguida compara os elementos para ir ordenando. Isso acontece para o vetor particionado a esquerda e o particionado a sua direita. Após os dois vetores serem ordenados ele combina o da esquerda com o da direita fazendo comparações e ordenando cada elemento até que se forme um vetor ordenado. 
+
+rm (list = ls ())
+cat("\014")
+#-----------------------------------------------------------------------
+
+BubbleSort <- function(A, n) {
+  for (i in 1:(n - 1)) {
+    swap <- FALSE
+    for (j in 1:(n - i)) {
+      if (A[j] > A[j + 1]) {
+        swap <- TRUE
+        aux <- A[j]
+        A[j] <- A[j + 1]
+        A[j + 1] <- aux
+      }
+    }
+    if (!swap)
+      break
+  }
+  return(A)
+}
+#-----------------------------------------------------------------------
+
+SelectionSort <- function (A, n) {
+  for (i in 1:(n - 1)) {
+    indice_min <- i
+    for (j in (i + 1):n) {
+      if (A[j] < A[indice_min]) {
+        indice_min <- j
+      }
+    }
+    if (indice_min != i) {
+      aux <- A[i]
+      A[i] <- A[indice_min]
+      A[indice_min] <- aux
+    }
+  }
+  return(A)
+}
+#-----------------------------------------------------------------------
+selection_sort <- function(A, n) {
+  for (i in 1:(n - 1)) {
+    indice_min <- i
+    for (j in (i + 1):n) {
+      if (A[j] < A[indice_min]) {
+        indice_min <- j
+      }
+    }
+    if (indice_min != i) {
+      aux <- A[i]
+      A[i] <- A[indice_min]
+      A[indice_min] <- aux
+    }
+  }
+  return(A)
+}
+#-----------------------------------------------------------------------
+
+InsertionSort <- function (A, n) {
+  for (i in 2:n) {
+    chave <- A[i]
+    j <- i - 1
+    while (j >= 1 && A[j] > chave) {
+      A[j + 1] <- A[j]
+      j <- j - 1
+    }
+    A[j + 1] <- chave
+  }
+  return(A)
+}
+#-----------------------------------------------------------------------
+
+insertion_sort <- function(A, n) {
+  for (i in 2:n){
+    chave <- A[i]
+    j <-  i -1
+    while(j>=1 && A[j]>chave)
+    {
+      A[j+1] <- A[j]
+      j <- j-1
+    }
+    A[j+1] <- chave
+  }
+  return(A)
+}
+#-----------------------------------------------------------------------
+QuickSort <- function(){
+  
+}
+  #-----------------------------------------------------------------------
+
+A <- sample(1:10)
+cat("Vetor antes da ordenação: ", A, "\n")
+n <- length(A)
+cat("Vetor após a ordenação com Bubble: ", BubbleSort(A, n), "\n")
+cat("Vetor após a ordenação com Selection: ", SelectionSort(A, n), "\n")
+cat("Vetor após a ordenação com Insertion: ", InsertionSort(A, n))
